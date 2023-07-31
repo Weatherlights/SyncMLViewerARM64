@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Package IgnorableNamespaces="build rescap rescap3 uap" xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:build="http://schemas.microsoft.com/developer/appx/2015/build" xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities" xmlns:rescap3="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities/3" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest">
+  <Identity Name="HaukeGtze.SyncMLViewerMSIX-Edition" ProcessorArchitecture="arm64" Publisher="CN=BFF8D712-89E6-4205-9504-3AB824A94414" Version="1.108.0.0" />
+  <Properties>
+    <PublisherDisplayName>Hauke Hasselberg</PublisherDisplayName>
+    <DisplayName>SyncML Viewer (MSIX-Edition)</DisplayName>
+    <Logo>Assets\Store50x50Logo.png</Logo>
+  </Properties>
+  <Resources>
+    <Resource Language="de-DE" />
+    <Resource uap:Scale="100" />
+    <Resource uap:Scale="120" />
+    <Resource uap:Scale="125" />
+    <Resource uap:Scale="140" />
+    <Resource uap:Scale="150" />
+    <Resource uap:Scale="160" />
+    <Resource uap:Scale="180" />
+    <Resource uap:Scale="200" />
+    <Resource uap:Scale="220" />
+    <Resource uap:Scale="225" />
+    <Resource uap:Scale="240" />
+    <Resource uap:Scale="250" />
+    <Resource uap:Scale="300" />
+    <Resource uap:Scale="400" />
+    <Resource uap:Scale="500" />
+  </Resources>
+  <Dependencies>
+    <TargetDeviceFamily MaxVersionTested="10.0.19043.0" MinVersion="10.0.10240.0" Name="Windows.Desktop" />
+  </Dependencies>
+  <Capabilities>
+    <rescap:Capability Name="runFullTrust" />
+    <rescap:Capability Name="allowElevation" />
+  </Capabilities>
+  <Applications>
+    <Application EntryPoint="Windows.FullTrustApplication" Executable="SyncMLViewer.exe" Id="SyncMLViewer.exe">
+      <uap:VisualElements BackgroundColor="transparent" Description="SyncMLViewer.exe" DisplayName="SyncML Viewer" Square150x150Logo="Assets\SyncMLViewer.exeSquare150x150Logo.png" Square44x44Logo="Assets\SyncMLViewer.exeSquare44x44Logo.png">
+        <uap:InitialRotationPreference>
+          <uap:Rotation Preference="portrait" />
+          <uap:Rotation Preference="landscape" />
+        </uap:InitialRotationPreference>
+        <uap:DefaultTile Square310x310Logo="Assets\SyncMLViewer.exeSquare310x310Logo.png" Square71x71Logo="Assets\SyncMLViewer.exeSquare71x71Logo.png" Wide310x150Logo="Assets\SyncMLViewer.exeWide310x150Logo.png" />
+        <uap:SplashScreen Image="Assets\SyncMLViewer.exeSplashScreen.png" />
+        <uap:LockScreen BadgeLogo="Assets\SyncMLViewer.exeBadgeLogo.png" Notification="badge" />
+      </uap:VisualElements>
+      <Extensions>
+        <rescap3:Extension Category="windows.desktopAppMigration" EntryPoint="Windows.FullTrustApplication" Executable="SyncMLViewer.exe">
+          <rescap3:DesktopAppMigration>
+            <rescap3:DesktopApp ShortcutPath="%APPDATA%\Microsoft\Windows\Start Menu\Programs\SyncML Viewer\SyncMLViewer.exe.lnk" />
+            <rescap3:DesktopApp ShortcutPath="%PROGRAMDATA%\Microsoft\Windows\Start Menu\Programs\SyncML Viewer\SyncMLViewer.exe.lnk" />
+            <rescap3:DesktopApp ShortcutPath="%USERPROFILE%\Desktop\SyncMLViewer.exe.lnk" />
+          </rescap3:DesktopAppMigration>
+        </rescap3:Extension>
+      </Extensions>
+    </Application>
+  </Applications>
+  <build:Metadata>
+    <build:Item Name="OperatingSystem" Version="10.0.19041.1586" />
+    <build:Item Name="AdvancedInstaller" Version="18.4 (dbc44dbf)" />
+    <build:Item Name="ProjectLicenseType" Version="express" />
+    <build:Item Name="SignTool.exe" Version="10.0.19041.1" />
+    <build:Item Name="MakePri.exe" Version="10.0.19041.1" />
+  </build:Metadata>
+  <mp:PhoneIdentity PhoneProductId="3eacde58-1836-4fe8-ab6f-39c659272f64" PhonePublisherId="e1da3dd1-b49e-434e-92f9-889385a3613c" />
+</Package>
